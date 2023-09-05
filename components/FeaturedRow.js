@@ -6,10 +6,10 @@ import RestaurantCard from './RestaurantCard'
 
 export default function FeaturedRow({title, description, restaurant}) {
   return (
-    <View>
-      <View style={tw`flex-row justify-between items-center px-4`}>
+    <View style={tw``}>
+      <View style={tw`flex-row justify-between items-center px-4 `}>
         <View>
-            <Text style={tw`font-bold text-lg`}>{title}</Text>
+            <Text style={tw`font-bold text-lg `}>{title}</Text>
             <Text style={tw`text-gray-500 text-xs`}>{description}</Text>
         </View>
         <TouchableOpacity>

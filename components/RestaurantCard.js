@@ -2,12 +2,20 @@ import { View, Text, TouchableWithoutFeedback, Image } from 'react-native'
 import React from 'react'
 import tw from "twrnc"
 import * as Icon from "react-native-feather"
+import {themeColors} from "../theme"
+import { useNavigation } from '@react-navigation/native'
 
 
 export default function RestaurantCard({item}) {
+
+  const navigation = useNavigation()
+
   return (
-    <TouchableWithoutFeedback>
-      <View style={tw`mr-6 bg-white rounded-3xl shadow-lg`}>
+    <TouchableWithoutFeedback
+     onPress={()=> navigation.navigate("Restaurant", {...item})}
+    >
+      <View 
+      style={[{shadowColor: themeColors.bgColor(0.2), shadowRadius: 7}, tw`mr-6 bg-white rounded-3xl shadow-lg mb-3`, ]}>
         <Image style={tw`h-36 w-64 rounded-t-3xl`} source={item.image} />
         <View style={tw`px-3 pb-4 gap-y-2`}>
             <Text style={tw`text-lg font-bold pt-2`}>{item.name}</Text>

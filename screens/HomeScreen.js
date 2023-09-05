@@ -9,10 +9,12 @@ import Categories from '../components/Categories'
 import { featured } from '../constants'
 import FeaturedRow from '../components/FeaturedRow'
 
+
+
 export default function HomeScreen() {
   return (
     <SafeAreaView style={tw`bg-white `}>
-        <StatusBar barStyle="dark-content" /> 
+        <StatusBar style="dark" /> 
       <View style={tw`flex-row items-center gap-x-2 px-4 pb-2`}>
         <View style={tw`flex-row flex-1 items-center p-3 rounded-full border border-gray-300`}>
             <Icon.Search height="25" width="25" stroke="gray" />

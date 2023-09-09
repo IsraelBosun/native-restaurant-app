@@ -3,9 +3,23 @@ import React from 'react'
 import tw from "twrnc"
 import { themeColors } from '../theme';
 import * as Icon from "react-native-feather"
+import { useDispatch, useSelector } from 'react-redux';
+import { addToCart, removeFromCart, selectCartItemsById } from '../slices/CartSlice';
 
 
 export default function DishRow({item}) {
+
+  const dispatch = useDispatch();
+  const totalItems = useSelector(state => selectCartItemsById(state, item.id))
+
+  const handleIncrease = () => {
+    dispatch(addToCart({...item}))
+  }
+
+  const handleDecrease = () => {
+    dispatch(removeFromCart({id: item.id}))
+  }
+  
   return (
     <View style={tw`flex-row items-center bg-white p-3 rounded-3xl shadow-2xl mb-3 mx-2 `}>
       <Image source={item.image} style={[tw`rounded-3xl`, {height: 100, width: 100}]} />
@@ -17,11 +31,11 @@ export default function DishRow({item}) {
         <View style={tw`flex-row justify-between pl-3 items-center`}>
             <Text style={tw`text-gray-700 text-lg font-bold`}>${item.price}</Text>
             <View style={tw`flex-row items-center`}>
-                <TouchableOpacity style={[tw`p-1 rounded-full`, {backgroundColor: themeColors.bgColor(1)}]}>
+                <TouchableOpacity onPress={handleDecrease} disabled={!totalItems.length} style={[tw`p-1 rounded-full`, {backgroundColor: themeColors.bgColor(1)}]}>
                     <Icon.Minus strokeWidth={2} height={20} width={20} stroke={"white"} />
                 </TouchableOpacity>
-                <Text style={tw`p-1`}>{2}</Text>
-                <TouchableOpacity style={[tw`p-1 rounded-full`, {backgroundColor: themeColors.bgColor(1)}]}>
+                <Text style={tw`p-1`}>{totalItems.length}</Text>
+                <TouchableOpacity onPress={handleIncrease} style={[tw`p-1 rounded-full`, {backgroundColor: themeColors.bgColor(1)}]}>
                     <Icon.Plus strokeWidth={2} height={20} width={20} stroke={"white"} />
                 </TouchableOpacity>
             </View>

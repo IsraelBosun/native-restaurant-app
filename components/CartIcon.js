@@ -3,10 +3,18 @@ import React from 'react';
 import tw from "twrnc"
 import { themeColors } from '../theme';
 import { useNavigation } from '@react-navigation/native';
+import { useSelector } from 'react-redux';
+import { selectCartItems } from '../slices/CartSlice';
 
 export default function CartIcon() {
 
-    const navigation = useNavigation()
+    const navigation = useNavigation();
+    const cartItems = useSelector(selectCartItems);
+    console.log(cartItems)
+
+    if(!cartItems.length) return;
+
+
 
   return (
     <View style={tw`absolute bottom-5 w-full z-50`}>

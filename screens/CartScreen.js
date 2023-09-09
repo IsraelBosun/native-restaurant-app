@@ -6,17 +6,22 @@ import * as Icon from "react-native-feather"
 import { themeColors } from '../theme';
 import { useNavigation } from '@react-navigation/native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { useSelector } from 'react-redux';
+import { selectRestaurant } from '../slices/RestaurantSlice';
 
 
 export default function CartScreen() {
 
-  const navigation = useNavigation()
+  const navigation = useNavigation();
+  // const restaurant = featured.restaurants[0];
 
-  const restaurant = featured.restaurants[0];
-  console.log(restaurant)
+  const restaurant = useSelector(selectRestaurant);
+  // console.log(restaurant)
+
+  // console.log(restaurant)
 
   return (
-    <SafeAreaView style={tw`flex-1`}>
+    <SafeAreaView style={tw`bg-white flex-1`}>
       
       <View style={tw`relative  py-4 shadow-sm`}>
         <TouchableOpacity onPress={()=>navigation.goBack()} style={[tw`absolute z-10 rounded-full p-1 shadow top-5 left-2`, { backgroundColor: themeColors.bgColor(1)}]}>

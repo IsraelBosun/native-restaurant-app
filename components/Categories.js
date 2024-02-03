@@ -1,4 +1,5 @@
-import { View, Text, ScrollView, TouchableOpacity, Image } from 'react-native'
+import { View, Text, ScrollView, TouchableOpacity } from 'react-native'
+import { Image } from 'expo-image';
 import React, { useState } from 'react'
 import tw from 'twrnc'
 import { categories } from '../constants'

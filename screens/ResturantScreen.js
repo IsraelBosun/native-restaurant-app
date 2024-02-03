@@ -43,7 +43,7 @@ export default function ResturantScreen() {
             <Text style={tw`text-3xl font-bold`}>{item.name}</Text>
             <View style={tw`flex-row gap-x-2 my-1`}>
               <View style={tw`flex-row items-center gap-x-1`}>
-                  <Image source={require("../assets/images/fullStar.png")} style={tw`h-4 w-4`} />
+                  <Image source={require("../assets/images/fullStar.jpg")} style={tw`h-4 w-4`} />
                   <Text style={tw`text-xs`}>
                       <Text style={tw`text-green-700`}>{item.stars}</Text>
                       <Text style={tw`text-gray-700`}>

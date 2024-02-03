@@ -55,7 +55,8 @@ export const CartSlice = createSlice({
       if(itemIndex>=0){
         newCart.splice(itemIndex, 1);
       }else{
-        console.log("can't remove item as its not in the basket");
+        console.log("can't remove item as it is not in the cart");
+        alert("can't remove item as it is not in the cart");
       }
       state.items = newCart
     },
@@ -64,6 +65,7 @@ export const CartSlice = createSlice({
     }
   }, 
 })
+
 
 // Action creators are generated for each case reducer function
 export const { addToCart, removeFromCart, emptyCart } = CartSlice.actions

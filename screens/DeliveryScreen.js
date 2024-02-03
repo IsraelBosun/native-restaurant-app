@@ -65,7 +65,7 @@ export default function DeliveryScreen() {
         </View>
         <View style={[tw`p-2 flex-row justify-between items-center rounded-full my-5 mx-2`, {backgroundColor: themeColors.bgColor(1)}]}>
           <View style={[tw`p-1 rounded-full`, {backgroundColor: 'rgba(225, 225, 225, 0.4)'}]}>
-            <Image style={tw`h-16 w-16 rounded-full`} source={require("../assets/images/deliveryGuy.png")} />
+            <Image style={tw`h-16 w-16 rounded-full`} source={require("../assets/images/deliveryGuy.jpg")} />
           </View>
           <View style={tw`flex-1 ml-3`}>
             <Text style={tw`text-lg font-bold text-white`}>Kha Ghul</Text>

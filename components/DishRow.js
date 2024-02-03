@@ -19,7 +19,7 @@ export default function DishRow({item}) {
   const handleDecrease = () => {
     dispatch(removeFromCart({id: item.id}))
   }
-  
+
   return (
     <View style={tw`flex-row items-center bg-white p-3 rounded-3xl shadow-2xl mb-3 mx-2 `}>
       <Image source={item.image} style={[tw`rounded-3xl`, {height: 100, width: 100}]} />
